@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>배우에게 메시지 보내기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2 id="actor-name">배우에게 메시지 보내기</h2>
+
+    <form name="actor-message" method="POST" netlify netlify-honeypot="bot-field">
+        <!-- Netlify hidden fields -->
+        <input type="hidden" name="form-name" value="actor-message">
+        <input type="hidden" name="배우" id="actor">
+
+        <!-- 메시지 입력창 -->
+        <textarea name="메시지" placeholder="배우에게 전하고 싶은 말을 적어주세요." required></textarea>
+
+        <!-- 스팸 방지 필드 (사용자에게 보이지 않음) -->
+        <div style="display:none;">
+            <input name="bot-field">
+        </div>
+
+        <button type="submit">메시지 보내기</button>
+    </form>
+
+    <script>
+        // URL 파라미터에서 배우 이름 가져오기
+        const params = new URLSearchParams(window.location.search);
+        const actor = params.get('actor');
+        document.getElementById('actor-name').innerText = `${actor}에게 메시지 보내기`;
+        document.getElementById('actor').value = actor;
+    </script>
+</body>
+</html>
