@@ -8,34 +8,54 @@
         body {
             font-family: sans-serif;
             text-align: center;
-            max-width: 500px;
             margin: 0 auto;
             padding: 1rem;
+            position: relative;
+            z-index: 1;
         }
+
+        body::before {
+            content: "";
+            background-image: url('images/bg.jpg'); /* 배경 이미지 경로 */
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0.25; /* 투명도 조절 */
+            z-index: -1;
+        }
+
         h2 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
+
         .actors {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
+
         .actors a {
             text-decoration: none;
             color: inherit;
         }
+
         .actors img {
             width: 100%;
-            max-width: 300px;
+            max-width: 100px;
             border-radius: 10px;
             transition: transform 0.2s;
         }
+
         .actors img:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
+
         .actors p {
-            margin-top: 0.5rem;
-            font-weight: bold;
+            font-size: 0.9rem;
+            margin: 0.3rem 0 0 0;
         }
     </style>
 </head>
@@ -47,12 +67,40 @@
             <p>배우 1</p>
         </a>
         <a href="message.html?actor=배우2">
-            <img src="images/actor2.jpg" alt="배우2">
+            <img src="images/actor1.jpg" alt="배우2">
             <p>배우 2</p>
         </a>
         <a href="message.html?actor=배우3">
-            <img src="images/actor3.jpg" alt="배우3">
+            <img src="images/actor1.jpg" alt="배우3">
             <p>배우 3</p>
+        </a>
+        <a href="message.html?actor=배우4">
+            <img src="images/actor1.jpg" alt="배우4">
+            <p>배우 4</p>
+        </a>
+        <a href="message.html?actor=배우5">
+            <img src="images/actor1.jpg" alt="배우5">
+            <p>배우 5</p>
+        </a>
+        <a href="message.html?actor=배우6">
+            <img src="images/actor1.jpg" alt="배우6">
+            <p>배우 6</p>
+        </a>
+        <a href="message.html?actor=배우7">
+            <img src="images/actor1.jpg" alt="배우7">
+            <p>배우 7</p>
+        </a>
+        <a href="message.html?actor=배우8">
+            <img src="images/actor1.jpg" alt="배우8">
+            <p>배우 8</p>
+        </a>
+        <a href="message.html?actor=배우9">
+            <img src="images/actor1.jpg" alt="배우9">
+            <p>배우 9</p>
+        </a>
+        <a href="message.html?actor=배우10">
+            <img src="images/actor1.jpg" alt="배우10">
+            <p>배우 10</p>
         </a>
     </div>
 </body>
