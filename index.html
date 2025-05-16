@@ -16,16 +16,16 @@
 
         body::before {
             content: "";
-            background-image: url('images/bg.jpg'); /* 배경 이미지 경로 */
-            background-size: contain;               /* ✅ 이미지 전체 보이게 */
-            background-repeat: no-repeat;           /* ✅ 반복 없음 */
-            background-position: center top;        /* ✅ 상단 중앙 정렬 */
-            background-attachment: scroll;          /* ✅ 스크롤에 따라 움직임 */
+            background-image: url('images/bg.jpg');    /* 가로 배경 이미지 */
+            background-repeat: repeat-y;               /* ✅ 수직 반복 */
+            background-size: 100vw auto;               /* ✅ 가로 꽉, 세로 비율 유지 */
+            background-position: left top;             /* 시작은 왼쪽 상단 */
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             opacity: 0.25;
             z-index: -1;
         }
+
 
         h2 {
             margin-bottom: 2rem;
