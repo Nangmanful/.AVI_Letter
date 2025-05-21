@@ -16,27 +16,28 @@
 
         body::before {
             content: "";
-            background-image: url('images/bg.jpg');    /* 가로 배경 이미지 */
-            background-repeat: repeat-y;               /* ✅ 수직 반복 */
-            background-size: 100vw auto;               /* ✅ 가로 꽉, 세로 비율 유지 */
-            background-position: left top;             /* 시작은 왼쪽 상단 */
+            background-image: url('images/bg.jpg');
+            background-repeat: repeat-y;
+            background-size: 100vw auto;
+            background-position: left top;
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             opacity: 0.25;
             z-index: -1;
         }
 
-
         h2 {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
 
         .actors {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 1rem;
-            max-width: 600px;
+            grid-template-columns: repeat(5, 1fr); /* ✅ 한 줄 5명 고정 */
+            gap: 0.5rem;
+            max-width: 100%;
             margin: 0 auto;
+            justify-items: center;
         }
 
         .actors a {
@@ -45,10 +46,11 @@
         }
 
         .actors img {
-            width: 100%;
-            max-width: 100px;
-            border-radius: 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
             transition: transform 0.2s;
+            object-fit: cover;
         }
 
         .actors img:hover {
@@ -56,8 +58,9 @@
         }
 
         .actors p {
-            font-size: 0.9rem;
-            margin: 0.3rem 0 0 0;
+            font-size: 0.7rem;
+            margin: 0.2rem 0 0 0;
+            text-align: center;
         }
     </style>
 </head>
@@ -66,43 +69,43 @@
     <div class="actors">
         <a href="message.html?actor=김창규">
             <img src="images/multi01.png" alt="김창규">
-            <p>김창규</p>
+            <p>김창규_멀티맨</p>
         </a>
         <a href="message.html?actor=나홍준">
             <img src="images/ya01.png" alt="나홍준">
-            <p>나홍준</p>
+            <p>나홍준_야한길</p>
         </a>
         <a href="message.html?actor=한서영">
             <img src="images/ma01.png" alt="한서영">
-            <p>한서영</p>
+            <p>한서영_마혜리</p>
         </a>
         <a href="message.html?actor=전연규">
             <img src="images/hong01.png" alt="전연규">
-            <p>전연규</p>
+            <p>전연규_홍금자</p>
         </a>
         <a href="message.html?actor=김희수">
             <img src="images/nari01.png" alt="김희수">
-            <p>김희수</p>
+            <p>김희수_금나리</p>
         </a>
         <a href="message.html?actor=김도현">
             <img src="images/multi02.png" alt="김도현">
-            <p>김도현</p>
+            <p>김도현_멀티맨</p>
         </a>
         <a href="message.html?actor=최재호">
             <img src="images/ya02.png" alt="최재호">
-            <p>최재호</p>
+            <p>최재호_야한길</p>
         </a>
         <a href="message.html?actor=박소담">
             <img src="images/ma02.png" alt="박소담">
-            <p>박소담</p>
+            <p>박소담_마혜리</p>
         </a>
         <a href="message.html?actor=지태현">
             <img src="images/hong02.png" alt="지태현">
-            <p>지태현</p>
+            <p>지태현_홍금자</p>
         </a>
         <a href="message.html?actor=문수연">
             <img src="images/nari02.png" alt="문수연">
-            <p>문수연</p>
+            <p>문수연_금나리리</p>
         </a>
     </div>
 </body>
