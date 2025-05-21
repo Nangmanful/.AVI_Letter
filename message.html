@@ -10,20 +10,38 @@
             max-width: 500px;
             margin: 0 auto;
             padding: 1rem;
+            position: relative;   /* ✅ 배경 이미지 겹치기 위한 설정 */
+            z-index: 1;
         }
+
+        body::before {
+            content: "";
+            background-image: url('images/bg.jpg');  /* ✅ 배경 이미지 경로 */
+            background-repeat: repeat-y;
+            background-size: 100vw auto;
+            background-position: left top;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0.25;       /* ✅ 불투명도 */
+            z-index: -1;
+        }
+
         h2 {
             text-align: center;
         }
+
         form {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
+
         textarea {
             padding: 1rem;
             font-size: 1rem;
             resize: vertical;
         }
+
         button {
             padding: 0.75rem;
             font-size: 1rem;
@@ -32,10 +50,12 @@
             border: none;
             cursor: pointer;
         }
+
         .back-link {
             margin-top: 2rem;
             text-align: center;
         }
+
         .back-link a {
             text-decoration: none;
             color: #00ad9f;
@@ -74,7 +94,7 @@
     <script>
         const params = new URLSearchParams(window.location.search);
         const actor = params.get('actor');
-        document.getElementById('actor-name').innerText = `${actor}에게 메시지 보내기`;
+        document.getElementById('actor-name').innerText = `${actor} 배우에게 보내는 메시지`;
         document.getElementById('actor').value = actor;
     </script>
 </body>
