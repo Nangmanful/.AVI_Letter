@@ -32,15 +32,15 @@
 
         h2 {
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .actors {
             display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5명 한 줄 */
-            column-gap: 0.5rem;
-            row-gap: 1.2rem;
-            max-width: 100%;
+            grid-template-columns: repeat(2, 1fr); /* ✅ 2명 한 줄 */
+            column-gap: 1rem;
+            row-gap: 2rem;
+            max-width: 600px;
             margin: 0 auto;
             justify-items: center;
         }
@@ -51,12 +51,12 @@
         }
 
         .actors img {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
             object-fit: cover;
             transition: transform 0.2s;
-            image-rendering: auto; /* ✅ 고해상도 이미지 최적 렌더링 */
+            image-rendering: auto;
         }
 
         .actors img:hover {
@@ -64,10 +64,10 @@
         }
 
         .actors p {
-            font-size: 0.65rem;
-            margin: 0.2rem 0 0 0;
+            font-size: 0.75rem;
+            margin: 0.4rem 0 0 0;
             text-align: center;
-            line-height: 1.2;
+            line-height: 1.3;
         }
     </style>
 </head>
@@ -78,37 +78,37 @@
             <img src="images/multi01.png" alt="김창규">
             <p>김창규<br>멀티맨</p>
         </a>
-        <a href="message.html?actor=나홍준">
-            <img src="images/ya01.png" alt="나홍준">
-            <p>나홍준<br>야한길</p>
-        </a>
-        <a href="message.html?actor=한서영">
-            <img src="images/ma01.png" alt="한서영">
-            <p>한서영<br>마혜리</p>
-        </a>
-        <a href="message.html?actor=전연규">
-            <img src="images/hong01.png" alt="전연규">
-            <p>전연규<br>홍금자</p>
-        </a>
-        <a href="message.html?actor=김희수">
-            <img src="images/nari01.png" alt="김희수">
-            <p>김희수<br>금나리</p>
-        </a>
         <a href="message.html?actor=김도현">
             <img src="images/multi02.png" alt="김도현">
             <p>김도현<br>멀티맨</p>
+        </a>
+        <a href="message.html?actor=나홍준">
+            <img src="images/ya01.png" alt="나홍준">
+            <p>나홍준<br>야한길</p>
         </a>
         <a href="message.html?actor=최재호">
             <img src="images/ya02.png" alt="최재호">
             <p>최재호<br>야한길</p>
         </a>
+        <a href="message.html?actor=한서영">
+            <img src="images/ma01.png" alt="한서영">
+            <p>한서영<br>마혜리</p>
+        </a>
         <a href="message.html?actor=박소담">
             <img src="images/ma02.png" alt="박소담">
             <p>박소담<br>마혜리</p>
         </a>
+        <a href="message.html?actor=전연규">
+            <img src="images/hong01.png" alt="전연규">
+            <p>전연규<br>홍금자</p>
+        </a>
         <a href="message.html?actor=지태현">
             <img src="images/hong02.png" alt="지태현">
             <p>지태현<br>홍금자</p>
+        </a>
+        <a href="message.html?actor=김희수">
+            <img src="images/nari01.png" alt="김희수">
+            <p>김희수<br>금나리</p>
         </a>
         <a href="message.html?actor=문수연">
             <img src="images/nari02.png" alt="문수연">
