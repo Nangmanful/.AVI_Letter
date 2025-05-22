@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>배우 선택하기</title>
+    <title>배우와 연출 선택하기</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- 귀여운 글꼴 Google Fonts -->
@@ -37,7 +37,7 @@
 
         .actors {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* ✅ 2명 한 줄 */
+            grid-template-columns: repeat(2, 1fr);
             column-gap: 1rem;
             row-gap: 2rem;
             max-width: 600px;
@@ -69,10 +69,40 @@
             text-align: center;
             line-height: 1.3;
         }
+
+        /* ✅ 추가된 작은 캐릭터 줄 */
+        .small-actors {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            column-gap: 0.5rem;
+            row-gap: 1rem;
+            max-width: 400px;
+            margin: 2rem auto 0 auto;
+            justify-items: center;
+        }
+
+        .small-actors a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .small-actors img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            image-rendering: auto;
+        }
+
+        .small-actors p {
+            font-size: 0.6rem;
+            margin: 0.3rem 0 0 0;
+        }
     </style>
 </head>
 <body>
-    <h2>배우를 선택해 응원의 메시지를 전해보세요!</h2>
+    <h2>배우나 연출을 선택해 응원의 메시지를 전해보세요!</h2>
+
     <div class="actors">
         <a href="message.html?actor=김창규">
             <img src="images/multi01.png" alt="김창규">
@@ -113,6 +143,30 @@
         <a href="message.html?actor=문수연">
             <img src="images/nari02.png" alt="문수연">
             <p>문수연<br>금나리</p>
+        </a>
+    </div>
+
+    <!-- ✅ 아랫줄 추가 캐릭터 -->
+    <div class="small-actors">
+        <a href="message.html?actor=서은우">
+            <img src="images/director01.png" alt="서은우">
+            <p>서은우</p>
+        </a>
+        <a href="message.html?actor=김항">
+            <img src="images/director02.png" alt="김항">
+            <p>김항</p>
+        </a>
+        <a href="message.html?actor=김윤서">
+            <img src="images/director03.png" alt="김윤서">
+            <p>김윤서</p>
+        </a>
+        <a href="message.html?actor=김민한">
+            <img src="images/direcotr04.png" alt="김민한">
+            <p>김민한</p>
+        </a>
+        <a href="message.html?actor=김정현">
+            <img src="images/extra05.png" alt="김정현">
+            <p>김정현</p>
         </a>
     </div>
 </body>

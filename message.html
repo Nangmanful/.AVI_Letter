@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>배우에게 메시지 보내기</title>
+    <title>응원의 메시지 보내기</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
@@ -64,7 +64,7 @@
     </style>
 </head>
 <body>
-    <h2 id="actor-name">배우에게 메시지 보내기</h2>
+    <h2 id="actor-name">응원의 메시지 보내기</h2>
 
     <form 
         name="actor-message" 
@@ -76,7 +76,7 @@
         <input type="hidden" name="form-name" value="actor-message">
         <input type="hidden" name="배우" id="actor">
 
-        <textarea name="메시지" placeholder="배우에게 전하고 싶은 말을 적어주세요." required></textarea>
+        <textarea name="메시지" placeholder="전하고 싶은 말을 적어주세요." required></textarea>
 
         <div hidden>
             <input name="배우" value="배우1">
@@ -94,7 +94,7 @@
     <script>
         const params = new URLSearchParams(window.location.search);
         const actor = params.get('actor');
-        document.getElementById('actor-name').innerText = `${actor} 배우에게 보내는 메시지`;
+        document.getElementById('actor-name').innerText = `${actor} 배우(연출)에게 보내는 메시지`;
         document.getElementById('actor').value = actor;
     </script>
 </body>
