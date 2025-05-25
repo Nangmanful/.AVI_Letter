@@ -10,19 +10,19 @@
             max-width: 500px;
             margin: 0 auto;
             padding: 1rem;
-            position: relative;   /* ✅ 배경 이미지 겹치기 위한 설정 */
+            position: relative;
             z-index: 1;
         }
 
         body::before {
             content: "";
-            background-image: url('images/bg.jpg');  /* ✅ 배경 이미지 경로 */
+            background-image: url('images/bg.jpg');
             background-repeat: repeat-y;
             background-size: 100vw auto;
             background-position: left top;
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            opacity: 0.25;       /* ✅ 불투명도 */
+            opacity: 0.25;
             z-index: -1;
         }
 
@@ -71,7 +71,7 @@
         method="POST" 
         netlify 
         netlify-honeypot="bot-field"
-        action="/success.html">
+        action="/.netlify/functions/send-mail">
 
         <input type="hidden" name="form-name" value="actor-message">
         <input type="hidden" name="배우" id="actor">
