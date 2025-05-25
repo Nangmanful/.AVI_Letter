@@ -1,4 +1,6 @@
 const sgMail = require("@sendgrid/mail");
+// send-mail.js 상단에 추가
+const querystring = require("querystring");
 
 exports.handler = async (event) => {
   const { payload } = JSON.parse(event.body);
