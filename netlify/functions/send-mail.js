@@ -3,7 +3,7 @@ const sgMail = require("@sendgrid/mail");
 const querystring = require("querystring");
 
 exports.handler = async (event) => {
-  const { payload } = JSON.parse(event.body);
+  const payload = querystring.parse(event.body);  // 👈 JSON.parse ❌
   const actor = payload["배우"];
   const message = payload["메시지"];
 
