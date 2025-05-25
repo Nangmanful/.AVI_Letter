@@ -90,12 +90,25 @@
     <div class="back-link">
         <a href="/index.html">← 처음으로 돌아가기</a>
     </div>
-
-    <script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
         const params = new URLSearchParams(window.location.search);
         const actor = params.get('actor');
-        document.getElementById('actor-name').innerText = `${actor} 배우(연출)에게 보내는 메시지`;
-        document.getElementById('actor').value = actor;
-    </script>
+
+        const actorInput = document.getElementById('actor');
+        const actorHeading = document.getElementById('actor-name');
+
+        if (actor && actorInput && actorHeading) {
+            actorInput.value = actor;
+            actorHeading.innerText = `${actor} 배우(연출)에게 보내는 메시지`;
+
+            // ✅ 디버깅용
+            console.log("🔍 설정된 actor:", actorInput.value);
+        } else {
+            console.error("❌ actor 값 설정 실패:", { actor, actorInput, actorHeading });
+        }
+    });
+</script>
+
 </body>
 </html>
