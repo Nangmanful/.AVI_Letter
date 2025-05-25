@@ -1,0 +1,15 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[plugins]]
+  package = "@netlify/plugin-functions-core"
+
+[[forms]]
+  name = "actor-message"
+  endpoint = "/.netlify/functions/send-mail"
+  method = "POST"
