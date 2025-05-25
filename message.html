@@ -96,13 +96,40 @@
             actorInput.value = actor;
             actorHeading.innerText = `${actor} 배우(연출)에게 보내는 메시지`;
 
-            // ✅ 디버깅용
             console.log("🔍 설정된 actor:", actorInput.value);
         } else {
             console.error("❌ actor 값 설정 실패:", { actor, actorInput, actorHeading });
         }
+
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            try {
+                await fetch(form.action, {
+                    method: form.method,
+                    body: formData
+                });
+
+                document.body.innerHTML = `
+                    <h2 style="text-align:center;">✅ 메시지가 성공적으로 전송되었습니다!</h2>
+                    <p style="text-align:center;">3초 후 처음 화면으로 돌아갑니다...</p>
+                `;
+
+                setTimeout(() => {
+                    window.location.href = "/index.html";
+                }, 3000);
+            } catch (err) {
+                alert("❌ 메시지 전송 실패: 다시 시도해주세요.");
+                console.error(err);
+            }
+        });
     });
 </script>
+
 
 </body>
 </html>
