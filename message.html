@@ -85,24 +85,50 @@
         <a href="/index.html">← 처음으로 돌아가기</a>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const params = new URLSearchParams(window.location.search);
-            const actor = params.get('actor');
+    document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const actor = params.get("actor");
+        const actorInput = document.getElementById("actor");
+        const actorHeading = document.getElementById("actor-name");
 
-            const actorInput = document.getElementById('actor');
-            const actorHeading = document.getElementById('actor-name');
+        if (actor && actorInput && actorHeading) {
+            actorInput.value = actor;
+            actorHeading.innerText = `${actor} 배우(연출)에게 보내는 메시지`;
+        }
 
-            if (actor && actorInput && actorHeading) {
-                actorInput.value = actor;
-                actorHeading.innerText = `${actor} 배우(연출)에게 보내는 메시지`;
+        const form = document.querySelector("form");
 
-                // ✅ 디버깅용
-                console.log("🔍 설정된 actor:", actorInput.value);
-            } else {
-                console.error("❌ actor 값 설정 실패:", { actor, actorInput, actorHeading });
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (response.ok) {
+                    document.body.innerHTML = `
+                        <h2 style="text-align:center;">✅ 메시지가 전송되었습니다!</h2>
+                        <p style="text-align:center;">3초 후 배우 선택 화면으로 이동합니다...</p>
+                    `;
+                    setTimeout(() => {
+                        window.location.href = "/index.html";
+                    }, 3000);
+                } else {
+                    alert("❌ 메일 전송에 실패했습니다.");
+                    console.error(await response.text());
+                }
+            } catch (error) {
+                alert("❌ 네트워크 오류가 발생했습니다.");
+                console.error(error);
             }
         });
+    });
     </script>
+
 
 </body>
 </html>
