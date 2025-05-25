@@ -1,9 +1,8 @@
-const sgMail = require("@sendgrid/mail");
-// send-mail.js 상단에 추가
+const nodemailer = require("nodemailer");
 const querystring = require("querystring");
 
 exports.handler = async (event) => {
-  const payload = querystring.parse(event.body);  // 👈 JSON.parse ❌
+  const payload = querystring.parse(event.body);
   const actor = payload["배우"];
   const message = payload["메시지"];
 
@@ -32,23 +31,28 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: "Unknown actor" };
   }
 
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  // ✅ Gmail SMTP 설정
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,       // ex) youraccount@gmail.com
+      pass: process.env.GMAIL_APP_PASS    // ex) 앱 비밀번호 (16자리)
+    }
+  });
 
-  const email = {
+  const mailOptions = {
+    from: `"한뼘사이 응원메일" <${process.env.GMAIL_USER}>`,
     to: recipient,
-    from: {
-      email: "your_verified_sender@example.com",
-      name: "한뼘사이 응원메일"
-    },
     subject: `${actor}님께 도착한 응원의 메시지`,
-    text: message,
+    text: message
   };
 
   try {
-    await sgMail.send(email);
-    return { statusCode: 200, body: "Email sent successfully" };
-  } catch (err) {
-    console.error(err);
-    return { statusCode: 500, body: "Error sending email" };
+    await transporter.sendMail(mailOptions);
+    console.log("✅ Email sent to:", recipient);
+    return { statusCode: 200, body: "Email sent successfully via Gmail" };
+  } catch (error) {
+    console.error("❌ Error sending Gmail:", error.message);
+    return { statusCode: 500, body: "Error sending email via Gmail" };
   }
 };
