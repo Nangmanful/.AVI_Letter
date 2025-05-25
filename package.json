@@ -1,0 +1,15 @@
+{
+  "name": "avi_letter",
+  "version": "1.0.0",
+  "description": "![KakaoTalk_20250525_233456939_01](https://github.com/user-attachments/assets/8430e064-9424-4d28-8829-9f731dea73c7)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.5"
+  }
+}
