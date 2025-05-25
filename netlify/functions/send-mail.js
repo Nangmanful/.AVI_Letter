@@ -7,6 +7,8 @@ exports.handler = async (event) => {
   const actor = payload["배우"];
   const message = payload["메시지"];
 
+  console.log("💬 배우 값:", actor);
+
   const emailMap = {
     "김창규": "89606590659@naver.com",
     "김도현": "dohyun@example.com",
