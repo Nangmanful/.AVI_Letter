@@ -84,36 +84,25 @@
     <div class="back-link">
         <a href="/index.html">← 처음으로 돌아가기</a>
     </div>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const params = new URLSearchParams(window.location.search);
-        const actor = params.get('actor');
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const actor = params.get('actor');
 
-        const actorInput = document.getElementById('actor');
-        const actorHeading = document.getElementById('actor-name');
+            const actorInput = document.getElementById('actor');
+            const actorHeading = document.getElementById('actor-name');
 
-        if (actor && actorInput && actorHeading) {
-            actorInput.value = actor;
-            actorHeading.innerText = `${actor} 배우(연출)에게 보내는 메시지`;
-            console.log("🔍 설정된 actor:", actorInput.value);
-        } else {
-            console.error("❌ actor 값 설정 실패:", { actor, actorInput, actorHeading });
-        }
+            if (actor && actorInput && actorHeading) {
+                actorInput.value = actor;
+                actorHeading.innerText = `${actor} 배우(연출)에게 보내는 메시지`;
 
-        // ✅ 폼 제출 후 Netlify로 보내지되, 성공 후 메시지 띄우고 리디렉션
-        const form = document.querySelector("form");
-        form.addEventListener("submit", () => {
-            document.body.innerHTML = `
-                <h2 style="text-align:center;">✅ 메시지가 성공적으로 전송되었습니다!</h2>
-                <p style="text-align:center;">3초 후 처음 화면으로 돌아갑니다...</p>
-            `;
-            setTimeout(() => {
-                window.location.href = "/index.html";
-            }, 3000);
+                // ✅ 디버깅용
+                console.log("🔍 설정된 actor:", actorInput.value);
+            } else {
+                console.error("❌ actor 값 설정 실패:", { actor, actorInput, actorHeading });
+            }
         });
-    });
-</script>
-
+    </script>
 
 </body>
 </html>
