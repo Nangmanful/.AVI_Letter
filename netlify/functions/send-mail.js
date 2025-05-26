@@ -10,7 +10,7 @@ exports.handler = async (event) => {
 
   const emailMap = {
     "김창규": "89606590659@naver.com",
-    "김도현": "dohyun@example.com",
+    "김도현": "github.dohyun@gmail.com",
     "나홍준": "hjnicky235@naver.com",
     "최재호": "b1621@dgist.ac.kr",
     "한서영": "hansy0213@dgist.ac.kr",
@@ -18,7 +18,7 @@ exports.handler = async (event) => {
     "전연규": "wjsdusrb0297@dgist.ac.kr",
     "지태현": "gusxowl.1@dgist.ac.kr",
     "김희수": "kimheesu713@naver.com",
-    "문수연": "gusxowl.1@dgist.ac.kr",
+    "문수연": "suyeon0moon@dgist.ac.kr",
     "서은우": "dmsdn1090@dgist.ac.kr",
     "김항": "kimhang@dgist.ac.kr",
     "김윤서": "yoonseo.7@dgist.ac.kr",
