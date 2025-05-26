@@ -11,19 +11,19 @@ exports.handler = async (event) => {
   const emailMap = {
     "김창규": "89606590659@naver.com",
     "김도현": "dohyun@example.com",
-    "나홍준": "hongjun@example.com",
-    "최재호": "jaeho@example.com",
-    "한서영": "seoyoung@example.com",
-    "박소담": "sodam@example.com",
-    "전연규": "yeongyu@example.com",
-    "지태현": "taehyun@example.com",
-    "김희수": "heesu@example.com",
-    "문수연": "sooyeon@example.com",
-    "서은우": "eunwoo@example.com",
-    "김항": "hang@example.com",
-    "김윤서": "yunseo@example.com",
+    "나홍준": "hjnicky235@naver.com",
+    "최재호": "b1621@dgist.ac.kr",
+    "한서영": "hansy0213@dgist.ac.kr",
+    "박소담": "dalnim0517@dgist.ac.kr",
+    "전연규": "wjsdusrb0297@dgist.ac.kr",
+    "지태현": "gusxowl.1@dgist.ac.kr",
+    "김희수": "kimheesu713@naver.com",
+    "문수연": "gusxowl.1@dgist.ac.kr",
+    "서은우": "dmsdn1090@dgist.ac.kr",
+    "김항": "kimhang@dgist.ac.kr",
+    "김윤서": "yoonseo.7@dgist.ac.kr",
     "김민한": "minhan@example.com",
-    "김정현": "junghyun@example.com"
+    "김정현": "j456ay@dgist.ac.kr"
   };
 
   const recipient = emailMap[actor];
