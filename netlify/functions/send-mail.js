@@ -22,7 +22,7 @@ exports.handler = async (event) => {
     "서은우": "dmsdn1090@dgist.ac.kr",
     "김항": "kimhang@dgist.ac.kr",
     "김윤서": "yoonseo.7@dgist.ac.kr",
-    "김민한": "minhan@example.com",
+    "김민한": "ksw10148@naver.com",
     "김정현": "j456ay@dgist.ac.kr"
   };
 
