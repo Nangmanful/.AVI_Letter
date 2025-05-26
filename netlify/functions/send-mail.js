@@ -41,7 +41,7 @@ exports.handler = async (event) => {
   });
 
   const mailOptions = {
-    from: `"한뼘사이 응원메일" <${process.env.GMAIL_USER}>`,
+    from: `"닿을 듯 말 듯 응원메일" <${process.env.GMAIL_USER}>`,
     to: recipient,
     subject: `${actor}님께 도착한 응원의 메시지`,
     text: message
