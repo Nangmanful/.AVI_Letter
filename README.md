@@ -38,12 +38,7 @@ Form Submission → Netlify Function → Gmail SMTP 이메일 전송 흐름을 �
 
 ---
 
-## 🛠️ 로컬 개발
-
-```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-# Netlify CLI 실행 또는 GitHub에 push → Netlify 자동 배포
+## 🛠️ 예시 이미지
 
 ![KakaoTalk_20250525_233456939_01](https://github.com/user-attachments/assets/8430e064-9424-4d28-8829-9f731dea73c7)
 
